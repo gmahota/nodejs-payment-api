@@ -20,7 +20,7 @@ const findAll = async function findAll(): Promise<Customer[]> {
 
   const customers: Customer[] = await CustomerRepository.find({
     order: {
-      phoneNumber: "ASC",
+      name: "ASC",
       id: "DESC",
     },
   });

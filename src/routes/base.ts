@@ -20,7 +20,7 @@ const baseRouter = Router();
 
 
 baseRouter.get("/customers", get_all_customers)
-baseRouter.get("/customers/:phonenumber", get_customer)
+baseRouter.get("/customers/:id", get_customer)
 baseRouter.post("/customers/",create_customer)
   
 baseRouter.get("/companies", get_all_companies)
