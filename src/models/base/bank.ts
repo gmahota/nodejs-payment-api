@@ -1,19 +1,22 @@
 import {Entity,Column,PrimaryColumn,PrimaryGeneratedColumn, ManyToOne,JoinColumn} from 'typeorm';
-import Company from './company';
 
-@Entity('customers')
-export default class Customer {
+
+@Entity('banks')
+export default class Bank {
     @PrimaryGeneratedColumn('increment')
     id:number;
 
-    @Column({length: 50, nullable:true })
-    code?:string;
+    @Column({length: 50, nullable:false })
+    code:string;   
 
     @Column({length: 50, nullable:false })
-    name?:string;
-    
-    @Column({length: 50, nullable:true })
-    website?:string;
+    description:string;
+
+    @Column({length: 50, nullable:false })
+    website:string;
+
+    @Column({length: 50, nullable:false })
+    notes:string;
 
     @Column({length: 50, nullable:true })
     address?:string;
@@ -30,16 +33,12 @@ export default class Customer {
     @Column({length: 20, nullable:true })
     cellphone:string;
 
-    @Column({length: 50, nullable:true })
+    @Column({length: 100, nullable:true })
     email:string;
 
-    @Column({length: 20, nullable:true })
+    @Column()
     status?:string;
 
-    @Column({length: 100, nullable:true })
-    notes?:string;
-
-    @ManyToOne(()=> Company, item => item.id)
-    @JoinColumn({name:'companyId'})
-    Company?:string;
+    @Column()
+    json?:string;
 }

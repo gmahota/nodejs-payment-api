@@ -1,6 +1,12 @@
 # agnuscrm-nodejs-api
 
 
+## Implementing 
+
+### Database Migration 
+
+`yarn typeorm migration:run`
+
 ## Sample
 
 ### Ponto24
