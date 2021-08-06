@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import CustomerService from "../../services/base/customer";
+import CompanyService from "../../services/base/company";
 import Customer from "../../models/base/customer";
 
 export const get_all_customers = async (
@@ -25,23 +26,40 @@ export const get_customer = async (request: Request, response: Response) => {
 
 export const create_customer = async (request: Request, response: Response) => {
   const {
+    code,
     name,
+    website,
     address,
     vat,
     province,
     phoneNumber,
+    cellphone,
+    email,
+    status,
+    notes,
+    companyId
   } = await request.body;
 
   try {
 
     let Customer: Customer = {
       id: 0,
+      code,
       name,
+      website,
       address,
       vat,
       province,
-      phoneNumber
+      phoneNumber,
+      cellphone,
+      email,
+      status,
+      notes
     };
+
+    if(!!companyId){
+      Customer.Company = await CompanyService.getById(companyId);
+    }
 
     Customer = await CustomerService.create(Customer);
 

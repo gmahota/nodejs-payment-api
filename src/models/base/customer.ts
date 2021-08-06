@@ -25,13 +25,13 @@ export default class Customer {
     province?: string;
     
     @Column({length: 20, nullable:true })
-    phoneNumber:string;
+    phoneNumber?:string;
 
     @Column({length: 20, nullable:true })
-    cellphone:string;
+    cellphone?:string;
 
     @Column({length: 50, nullable:true })
-    email:string;
+    email?:string;
 
     @Column({length: 20, nullable:true })
     status?:string;
@@ -41,5 +41,5 @@ export default class Customer {
 
     @ManyToOne(()=> Company, item => item.id)
     @JoinColumn({name:'companyId'})
-    Company?:string;
+    Company?:Company;
 }
