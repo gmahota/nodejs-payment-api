@@ -17,7 +17,8 @@ const findById = async function findById(id: string): Promise<Payment> {
   const PaymentRepository = getRepository(Payment);
 
   const payment: Payment = await PaymentRepository.findOneOrFail({
-    where: { id: id }
+    where: { id: id },
+    relations: ["paymentMpesaLog"]
   });
 
   return payment;
@@ -31,6 +32,7 @@ const findAll = async function findAll(): Promise<Payment[]> {
       date: "ASC",
       id: "DESC",
     },
+    relations: ["paymentMpesaLog"]
   });
 
   return Payments;
@@ -80,6 +82,8 @@ const create = async function create(
 
       payment.reference = payment.paymentMpesaLog?.reference || payment.reference;
       payment.transaction = payment.paymentMpesaLog?.transaction || payment.transaction;
+      payment.status = "finished"
+
       await PaymentRepository.save(payment)
 
       return payment;
