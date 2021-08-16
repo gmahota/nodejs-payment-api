@@ -1,0 +1,188 @@
+[
+  {
+    "Code": 200,
+    "Mpesa Code": "INS-0",
+    "Description": "Request processed successfully",
+    "Success": "S"
+  },
+  {
+    "Code": 201,
+    "Mpesa Code": "INS-0",
+    "Description": "Request processed successfully",
+    "Success": "S"
+  },
+  {
+    "Code": 500,
+    "Mpesa Code": "INS-1",
+    "Description": "Internal Error",
+    "Success": "N"
+  },
+  {
+    "Code": 401,
+    "Mpesa Code": "INS-5",
+    "Description": "Transaction cancelled by customer",
+    "Success": "N"
+  },
+  {
+    "Code": 401,
+    "Mpesa Code": "INS-6",
+    "Description": "Transaction Failed",
+    "Success": "N"
+  },
+  {
+    "Code": 408,
+    "Mpesa Code": "INS-9",
+    "Description": "Request timeout",
+    "Success": "N"
+  },
+  {
+    "Code": 409,
+    "Mpesa Code": "INS-10",
+    "Description": "Duplicate Transaction",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-13",
+    "Description": "Invalid Shortcode Used",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-14",
+    "Description": "Invalid Reference Used",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-15",
+    "Description": "Invalid Amount Used",
+    "Success": "N"
+  },
+  {
+    "Code": 503,
+    "Mpesa Code": "INS-16",
+    "Description": "Unable to handle the request due to a temporary overloading",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-17",
+    "Description": "Invalid Transaction Reference. Length Should Be Between 1 and 20.",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-18",
+    "Description": "Invalid TransactionID Used",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-19",
+    "Description": "Invalid ThirdPartyReference Used",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-20",
+    "Description": "Not All Parameters Provided. Please try again.",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-21",
+    "Description": "Parameter validations failed. Please try again.",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-22",
+    "Description": "Invalid Operation Type",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-23",
+    "Description": "Unknown Status. Contact M-Pesa Support",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-24",
+    "Description": "Invalid InitiatorIdentifier Used",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-25",
+    "Description": "Invalid SecurityCredential Used",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-993",
+    "Description": "Direct Debit Missing",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-994",
+    "Description": "Direct Debit Already Exists",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-995",
+    "Description": "Customer's Profile Has Problems",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-996",
+    "Description": "Customer Account Status Not Active",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-997",
+    "Description": "Linking Transaction Not Found",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-998",
+    "Description": "Invalid Market",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-2001",
+    "Description": "Initiator authentication error.",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-2002",
+    "Description": "Receiver invalid.",
+    "Success": "N"
+  },
+  {
+    "Code": 422,
+    "Mpesa Code": "INS-2006",
+    "Description": "Insufficient balance",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-2051",
+    "Description": "MSISDN invalid.",
+    "Success": "N"
+  },
+  {
+    "Code": 400,
+    "Mpesa Code": "INS-2057",
+    "Description": "Language code invalid.",
+    "Success": "N"
+  }
+]
