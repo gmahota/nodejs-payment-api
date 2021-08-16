@@ -26,9 +26,9 @@ baseRouter
   .post("/banks/", banks.create_bank)
 
 baseRouter
-  .get("/banksAccounts", banksAccount.get_all)
-  .get("/banksAccounts/:id", banksAccount.create_bankAccount)
-  .post("/banksAccounts/", banksAccount.create_bankAccount)
+  .get("/bankaccounts", banksAccount.get_all)
+  .get("/bankaccounts/:id", banksAccount.create_bankAccount)
+  .post("/bankaccounts/", banksAccount.create_bankAccount)
 
 baseRouter.get("/customers", get_all_customers)
 baseRouter.get("/customers/:id", get_customer)
