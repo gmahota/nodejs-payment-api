@@ -32,7 +32,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/School"
+                            "$ref": "#/definitions/Payment"
                         }
                     }
                 }
