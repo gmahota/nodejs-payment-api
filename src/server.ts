@@ -20,7 +20,7 @@ const app = express();
 // Constants
 const port = process.env.PORT || 5000;
 
-app.use("/api-docs",swaggerUi.serve,swaggerUi.setup(swaggerDocument));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cors());
 app.use(express.json());
 app.use(routes);

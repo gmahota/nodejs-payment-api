@@ -2,14 +2,14 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "EDU Api Middleware",
-        "description": "A Api Middleware from EDU",
+        "title": "Payment's Api Middleware",
+        "description": "Api Middleware for Payment's",
         "license": {
             "name": "MIT",
             "url": "https://opensource.org/licenses/MIT"
         }
     },
-    "host": "localhost:5000",
+    "host": "moz-payment-api.herokuapp.com",
     "basePath": "/api",
     "schemes": [
         "http",
@@ -22,33 +22,33 @@
         "application/json"
     ],
     "paths": {
-        "/users": {
+        "/payments": {
             "get": {
                 "tags": [
-                    "Users"
+                    "Mpesa"
                 ],
-                "summary": "Get All Users in System",
+                "summary": "Get All Payment on System",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Users"
+                            "$ref": "#/definitions/School"
                         }
                     }
                 }
             },
             "post": {
                 "tags": [
-                    "Users"
+                    "Mpesa"
                 ],
-                "summary": "Create New User On The System",
+                "summary": "Create New Payement On The System",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
                         "description": "User that we want to create",
                         "schema": {
-                            "$ref": "#/definitions/Users"
+                            "$ref": "#/definitions/Payment"
                         }
                     }
                 ],
@@ -59,7 +59,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/id"
+                            "$ref": "#/definitions/Payment"
                         }
                     },
                     "400": {
@@ -68,58 +68,58 @@
                 }
             }
         },
-        "/users/{id}": {
+        "/payments/{id}": {
             "parameters": [
                 {
                     "name": "id",
                     "in": "path",
                     "required": true,
-                    "description": "ID of the cat that we want to",
+                    "description": "Id of the Payment that we want to",
                     "type": "string"
                 }
             ],
             "get": {
                 "tags": [
-                    "Users"
+                    "Mpesa"
                 ],
-                "summary": "Get User of the given ID",
+                "summary": "Get Payment of the given ID",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Users"
+                            "$ref": "#/definitions/Payment"
                         }
                     }
                 }
             }
-        },        
-        "/teachers": {
+        },
+        "/bankaccounts": {
             "get": {
                 "tags": [
-                    "Teacher"
+                    "Bank Account"
                 ],
-                "summary": "Get All Teacher in System",
+                "summary": "Get All Customers in System",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Teacher"
+                            "$ref": "#/definitions/Customer"
                         }
                     }
                 }
             },
             "post": {
                 "tags": [
-                    "Teacher"
+                    "Bank Account"
                 ],
-                "summary": "Create New Teacher On The System",
+                "summary": "Create New Bank Account On The System",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
                         "description": "User that we want to create",
                         "schema": {
-                            "$ref": "#/definitions/Teacher"
+                            "$ref": "#/definitions/BankAccount"
                         }
                     }
                 ],
@@ -130,7 +130,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Teacher"
+                            "$ref": "#/definitions/BankAccount"
                         }
                     },
                     "400": {
@@ -139,7 +139,78 @@
                 }
             }
         },
-        "/teachers/{id}": {
+        "/bankaccounts/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Code of the Bank Account that we want to",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Bank Account"
+                ],
+                "summary": "Get Customer of the given ID",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/BankAccount"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers": {
+            "get": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Get All Customers in System",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Create New Customer On The System",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            }
+        },
+        "/customers/{id}": {
             "parameters": [
                 {
                     "name": "id",
@@ -151,85 +222,14 @@
             ],
             "get": {
                 "tags": [
-                    "Teacher"
+                    "Customers"
                 ],
-                "summary": "Get Teacher of the given ID",
+                "summary": "Get Customer of the given ID",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/Teacher"
-                        }
-                    }
-                }
-            }
-        },
-        "/schools":{
-            "get": {
-                "tags": [
-                    "School"
-                ],
-                "summary": "Get All School in System",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/School"
-                        }
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "School"
-                ],
-                "summary": "Create New Teacher On The System",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "User that we want to create",
-                        "schema": {
-                            "$ref": "#/definitions/School"
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/School"
-                        }
-                    },
-                    "400": {
-                        "description": "Failed. Bad post data."
-                    }
-                }
-            }
-        },
-        "/schools/{id}": {
-            "parameters": [
-                {
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "description": "Id of the School that we want to",
-                    "type": "string"
-                }
-            ],
-            "get": {
-                "tags": [
-                    "School"
-                ],
-                "summary": "Get Teacher of the given ID",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/School"
                         }
                     }
                 }
@@ -244,171 +244,186 @@
                 }
             }
         },
-        "Users": {
+        "BankAccount": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "id": {
-                    "type": "string",
-                    "title": "id"
+                    "type": "integer"
                 },
-                "username": {
-                    "type": "string",
-                    "title": "username"
-                },
-                "name": {
-                    "type": "string",
-                    "title": "name"
-                },
-                "firstName": {
-                    "type": "string",
-                    "title": "firstName"
-                },
-                "lastName": {
-                    "type": "string",
-                    "title": "lastName"
-                },
-                "email": {
-                    "type": "string",
-                    "title": "email"
-                },
-                "password": {
-                    "title": "password",
+                "code": {
                     "type": "string"
                 },
-                "confirmPassword": {
-                    "title": "password",
-                    "type": "boolean"
-                },
-                "phoneNumber": {
-                    "type": "string",
-                    "title": "phoneNumber"
-                },
-                "inactive": {
-                    "type": "boolean",
-                    "title": "inactive"
-                },
-                "country": {
-                    "type": "string",
-                    "title": "country"
-                }
-            }
-        },
-        "Teacher": {
-            "title": "Teacher",
-            "Type": "object",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "title": "id"
-                },
                 "name": {
-                    "type": "string",
-                    "title": "name"
+                    "type": "string"
                 },
-                "author": {
-                    "type": "string",
-                    "title": "author"
+                "number": {
+                    "type": "string"
                 },
-                "createAt": {
-                    "type": "string",
-                    "format": "date-time",
-                    "title": "createAt"
+                "nib": {
+                    "type": "string"
                 },
-                "status": {
-                    "type": "string",
-                    "title": "status"
+                "swift": {
+                    "type": "string"
                 },
-                "phoneNumber": {
-                    "type": "string",
-                    "title": "phoneNumber"
+                "iban": {
+                    "type": "string"
                 },
-                "address": {
-                    "type": "string",
-                    "title": "address"
+                "accountManager": {
+                    "type": "string"
                 },
-                "city": {
-                    "type": "string",
-                    "title": "city"
+                "accountManagerDetails": {
+                    "type": "string"
                 },
-                "province": {
-                    "type": "string",
-                    "title": "province"
+                "productType": {
+                    "type": "string"
                 },
-                "district": {
-                    "type": "string",
-                    "title": "district"
+                "currency": {
+                    "type": "string"
+                },
+                "branch": {
+                    "type": "string"
+                },
+                "openingDate": {
+                    "type": "string"
+                },
+                "currentBalance": {
+                    "type": "string"
                 }
             },
             "required": [
-                "id",
-                "name"
-            ]
+                "code",
+                "name",
+                "number"
+            ],
+            "title": "Bank Account"
         },
-        "School":{
-            "title": "School",
+        "Payment": {
             "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "reference": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "transaction": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "amount",
+                "date",
+                "id",
+                "phoneNumber",
+                "reference",
+                "transaction",
+                "type"
+            ],
+            "title": "Payment"
+        },
+        "PaymentMpesaLog": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "conversation": {
+                    "type": "string"
+                },
+                "transaction": {
+                    "type": "string"
+                },
+                "statusText": {
+                    "type": "null"
+                },
+                "status": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "reference": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "outputError": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "date"
+            ],
+            "title": "PaymentMpesaLog"
+        },
+        "Customer": {
+            "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "id": {
-                    "type": "string",
-                    "title": "id"
+                    "type": "integer"
+                },
+                "code": {
+                    "type": "string"
                 },
                 "name": {
-                    "type": "string",
-                    "title": "name"
+                    "type": "string"
                 },
-                "abbreviation": {
-                    "type": "string",
-                    "title": "abbreviation"
+                "website": {
+                    "type": "null"
                 },
                 "address": {
-                    "type": "string",
-                    "title": "address"
+                    "type": "string"
                 },
-                "city": {
+                "vat": {
                     "type": "string",
-                    "title": "city"
+                    "format": "integer"
                 },
-                "cluster": {
-                    "type": "string",
-                    "title": "cluster"
+                "province": {
+                    "type": "string"
                 },
-                "gradeSpan": {
-                    "type": "string",
-                    "title": "gradeSpan"
+                "phoneNumber": {
+                    "type": "string"
                 },
-                "highGrade": {
-                    "type": "string",
-                    "title": "highGrade"
+                "cellphone": {
+                    "type": "string"
                 },
-                "lowGrade": {
-                    "type": "string",
-                    "title": "lowGrade"
+                "email": {
+                    "type": "string"
                 },
-                "phone": {
-                    "type": "string",
-                    "title": "phone"
+                "status": {
+                    "type": "string"
                 },
-                "principal": {
-                    "type": "string",
-                    "title": "principal"
-                },
-                "region": {
-                    "type": "string",
-                    "title": "region"
-                },
-                "state": {
-                    "type": "string",
-                    "title": "state"
-                },
-                "ward": {
-                    "type": "string",
-                    "title": "ward"
-                },
-                "zip": {
-                    "type": "string",
-                    "title": "zip"
+                "notes": {
+                    "type": "string"
                 }
-            }
+            },
+            "required": [
+                "name"
+            ],
+            "title": "Customer"
         }
     }
 }

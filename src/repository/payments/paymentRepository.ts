@@ -9,16 +9,11 @@ import path from "path";
 import fs from "fs";
 import appRoot from "app-root-path"
 
-interface Key {
-  id?: any;
-}
-
 const findById = async function findById(id: string): Promise<Payment> {
   const PaymentRepository = getRepository(Payment);
 
   const payment: Payment = await PaymentRepository.findOneOrFail({
-    where: { id: id },
-    relations: ["paymentMpesaLog"]
+    where: { id: id }
   });
 
   return payment;
@@ -31,8 +26,7 @@ const findAll = async function findAll(): Promise<Payment[]> {
     order: {
       date: "ASC",
       id: "DESC",
-    },
-    relations: ["paymentMpesaLog"]
+    }
   });
 
   return Payments;

@@ -4,7 +4,7 @@ import repository from '../../repository/base/bankAccount'
 
 
 const getById = (id: string) =>
-  repository.findById(id)
+  repository.findByCode(id)
 
 const getAll = () =>
   repository.findAll()

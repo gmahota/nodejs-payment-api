@@ -20,9 +20,9 @@ routes.get("/", async (request: Request, response: Response) => {
   response.send("WellCome!");
 });
 
-routes.use('/api/admin',adminRouter);
-routes.use('/api/auth',authRouter);
-routes.use('/api/base',baseRouter);
-routes.use('/api/payment',paymentRouter);
+routes.use('/api', adminRouter);
+routes.use('/api/auth', authRouter);
+routes.use('/api', baseRouter);
+routes.use('/api', paymentRouter);
 
 export default routes;
