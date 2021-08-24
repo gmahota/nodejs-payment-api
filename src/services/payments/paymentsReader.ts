@@ -34,7 +34,7 @@ const readFiles = async () => {
                 const buffer = Buffer.concat(chunks);
                 const str = buffer.toString("utf-8")
 
-                lists.push(convertToServicePayment(String(str)))
+                lists.push(convertToServicePayment(item.name, str))
 
             })
 
@@ -46,11 +46,12 @@ const readFiles = async () => {
 
     return lists
 
-    function convertToServicePayment(text: string) {
+    function convertToServicePayment(fileName: string, text: string) {
         try {
             //readlines from string
             const servicePayment: ServicePayment = {
                 id: 0,
+                fileName: fileName,
                 total: 0,
                 totalRate: 0,
                 items: []
