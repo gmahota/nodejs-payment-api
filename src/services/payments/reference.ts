@@ -12,7 +12,7 @@ const getReference_Ponto24 = (entity: string, document: string, code: number, nu
 
     sReferenciaSCheck = document.substring(0, 1) + pad_with_zeroes(code.toString(), 6) + pad_with_zeroes(numberPayment.toString(), 2)
 
-    sReferenciaSCheckCalc = pad_with_zeroes(entity,5) + sReferenciaSCheck;
+    sReferenciaSCheckCalc = pad_with_zeroes(entity, 5) + sReferenciaSCheck;
 
     while (I <= 15) {
         if (I == 1) {

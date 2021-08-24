@@ -10,7 +10,7 @@ paymentRouter.get("/ponto24/:entity-:document-:code-:numberPayment", async (requ
     const { entity, document, code, numberPayment } = request.params
 
     const reference = Reference.getReference_Ponto24(entity, document, Number(code), Number(numberPayment))
-    response.send("Referencia Ponto 24: " + reference);
+    response.send({ "Referencia": reference, "tipo": "Ponto 24", "Caracteres": reference.length })
 })
 
 paymentRouter.get("/bim/:bank_code-:bank-:code-:invoice", async (request: Request, response: Response) => {
