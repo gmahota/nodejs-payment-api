@@ -6,11 +6,11 @@ import * as PaymentControler from "../controllers/payments/paymentController";
 
 const paymentRouter = Router();
 
-paymentRouter.get("/ponto24/:entity-:document-:code-:numberPayment", async (request: Request, response: Response) => {
+paymentRouter.get("/ponto24/:entity-:code-:numberPayment", async (request: Request, response: Response) => {
 
-    const { entity, document, code, numberPayment } = request.params
+    const { entity, code, numberPayment } = request.params
 
-    const reference = Reference.getReference_Ponto24(entity, document, Number(code), Number(numberPayment))
+    const reference = Reference.getReference_Ponto24(entity, Number(code), Number(numberPayment))
     response.send({ "Referencia": reference, "tipo": "Ponto 24", "Caracteres": reference.length })
 })
 

@@ -1,5 +1,5 @@
 
-const getReference_Ponto24 = (entity: string, document: string, code: number, numberPayment: number) => {
+const getReference_Ponto24 = (entity: string, code: number, numberPayment: number) => {
     let sReferenciaSCheck = ""
 
     let sReferenciaSCheckCalc = ""
@@ -10,7 +10,7 @@ const getReference_Ponto24 = (entity: string, document: string, code: number, nu
     let numPos = 0;
     let CheckDigitReferencia = 0;
 
-    sReferenciaSCheck = document.substring(0, 1) + pad_with_zeroes(code.toString(), 6) + pad_with_zeroes(numberPayment.toString(), 2)
+    sReferenciaSCheck = pad_with_zeroes(code.toString(), 6) + pad_with_zeroes(numberPayment.toString(), 2)
 
     sReferenciaSCheckCalc = pad_with_zeroes(entity, 5) + sReferenciaSCheck;
 
@@ -19,7 +19,7 @@ const getReference_Ponto24 = (entity: string, document: string, code: number, nu
             P = 0;
         }
         if (I < 15) {
-            numPos = Number(sReferenciaSCheckCalc.substring(I - 1, 1));
+            numPos = Number(sReferenciaSCheckCalc.substr(I - 1, 1));
         }
         else {
             numPos = 0;
@@ -58,7 +58,7 @@ const getReference_Bim = (bank_code: string, bank: string, code: string, invoice
 
     for (var i = 0; i < arrayPeso.length; i++) {
         //int num = Convert.ToInt32(strNib.ElementAt(i));
-        soma1 = Number(strNib.substring(i, 1)) * arrayPeso[i];
+        soma1 = Number(strNib.substr(i, 1)) * arrayPeso[i];
         lngSoma = lngSoma + soma1;
     }
 
@@ -66,7 +66,7 @@ const getReference_Bim = (bank_code: string, bank: string, code: string, invoice
 
     var intChDj = 98 - lngModSoma;
 
-    strNibFinal = strNib.substring(0, 19);
+    strNibFinal = strNib.substr(0, 19);
 
     strNibFinal += pad_with_zeroes(intChDj.toString(), 2);
 
