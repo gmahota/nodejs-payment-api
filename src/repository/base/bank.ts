@@ -24,7 +24,30 @@ const findAll = async function findAll(): Promise<Bank[]> {
   return Banks;
 }
 
+const exists = async function exists(code: string): Promise<boolean> {
+  const BankRepository = getRepository(Bank);
+
+  var items = await BankRepository.find({
+    where: { code: code }
+  }) || [];
+
+  return items.length > 0;
+};
+
 const create = async function create(
+  item: Bank
+): Promise<Bank> {
+
+    const BankRepository = getRepository(Bank);
+
+    await BankRepository.save(item);
+  
+    return item;
+  
+  
+};
+
+const update = async function update(
   item: Bank
 ): Promise<Bank> {
   const BankRepository = getRepository(Bank);
@@ -37,5 +60,7 @@ const create = async function create(
 export default {
   create,
   findAll,
-  findByCode
+  findByCode,
+  update,
+  exists
 };

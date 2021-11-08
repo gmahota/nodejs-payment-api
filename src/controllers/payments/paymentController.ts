@@ -51,7 +51,7 @@ export const create_payment = async (request: Request, response: Response) => {
     payment = await PaymentService.create(payment);
 
     return response.status(200).json(payment);
-  } catch (e) {
+  } catch (e:any) {
     return response.status(e.status || 404).json(
       {
         msg: e.statusText ||

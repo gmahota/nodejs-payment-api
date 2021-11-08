@@ -53,7 +53,7 @@ const create = async function create(
   const PaymentRepository = getRepository(Payment);
   const PaymentMpesaLogRepository = getRepository(PaymentMpesaLog);
 
-  const mpesaResponse = await Mpesa.set_ReceiveMoney(
+  const mpesaResponse:any = await Mpesa.set_ReceiveMoney(
     payment.phoneNumber,
     payment.reference,
     payment.reference,

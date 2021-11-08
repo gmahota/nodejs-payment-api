@@ -54,8 +54,8 @@ export const create_bank = async (request: Request, response: Response) => {
 
         return response.status(200).json(item);
     } catch (e) {
-        return response.status(404).json(
-            { msg: "error to create a Customer with that i", error: e },
+        return response.status(400).json(
+            { msg: "error to create a Bank with that i", error: e },
         );
     }
 };

@@ -1,6 +1,4 @@
-import dotenv from "dotenv";
 
-dotenv.config();
 
 export default {
   hashSaltRounds: 10,

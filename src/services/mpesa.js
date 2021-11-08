@@ -1,5 +1,4 @@
-import { Client } from "@paymentsds/mpesa";
-import mpesaResponseCode from "../data/mpesa/response.json";
+const Client = require("@paymentsds/mpesa").Client;
 
 const client = new Client({
   apiKey: process.env.Mpesa_ApiKey, // API Key
@@ -37,6 +36,4 @@ const set_ReceiveMoney = async (from, reference, transaction, amount) => {
   return response;
 };
 
-export default {
-  set_ReceiveMoney,
-};
+module.exports = { set_ReceiveMoney };

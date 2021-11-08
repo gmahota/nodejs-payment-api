@@ -24,13 +24,13 @@ export default class Bank {
     province?: string;
 
     @Column({ length: 20, nullable: true })
-    phoneNumber: string;
+    phoneNumber?: string;
 
     @Column({ length: 20, nullable: true })
-    cellphone: string;
+    cellphone?: string;
 
     @Column({ length: 100, nullable: true })
-    email: string;
+    email?: string;
 
     @Column()
     status?: string;
