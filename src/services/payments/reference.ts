@@ -10,7 +10,7 @@ const getReference_Ponto24 = (entity: string, code: number, numberPayment: numbe
     let numPos = 0;
     let CheckDigitReferencia = 0;
 
-    sReferenciaSCheck = pad_with_zeroes(code.toString(), 6) + pad_with_zeroes(numberPayment.toString(), 2)
+    sReferenciaSCheck =pad_with_zeroes("1", 1) + pad_with_zeroes(code.toString(), 6) + pad_with_zeroes(numberPayment.toString(), 2)
 
     sReferenciaSCheckCalc = pad_with_zeroes(entity, 5) + sReferenciaSCheck;
 
